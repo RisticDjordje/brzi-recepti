@@ -1,0 +1,11 @@
+{% extends 'recepti/base.html' %}
+{% block title %}{{jelo.ime}}{% endblock %}
+
+{% block body %}
+    <h1> {{jelo.ime}} </h1>
+    <img src="{{jelo.slika.url}}">
+    <h2> {{jelo.kategorija}}</h2>
+    <h2> {{jelo.sastojci|linebreaks}}</h2>
+    <h3> {{jelo.nacin_pripreme |linebreaks}}</h3>
+{% endblock %}
+

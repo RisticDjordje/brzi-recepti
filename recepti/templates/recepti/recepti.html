@@ -1,0 +1,14 @@
+{% extends 'recepti/base.html' %}
+{% block title %}Recepti{% endblock %}
+
+{% block body %}
+
+    <h3> Recepti koje mozete napraviti sa sastojcima koje imate: </h3>
+    <ul>
+        {% for jelo in sva_jela %}
+
+            <li><img src="{{jelo.slika.url}}"><a href="{% url 'detalji' jelo.id %}"> {{ jelo.ime }} </a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
