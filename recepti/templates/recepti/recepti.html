@@ -7,7 +7,7 @@
     <ul align = 'center' class = 'list-unstyled'>
         {% for jelo in sva_jela %}
 
-            <a href = "{% url 'detalji' jelo.id %}"><img  align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/><a align = 'center' href="{% url 'detalji' jelo.id %}"> {{ jelo.ime }} </a></li>
+            <a href = "{% url 'detalji' jelo.id %}"><img  align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/><a align = 'center' href="{% url 'detalji' jelo.id %}"> {{ jelo.ime }} </a><br></li>
         {% endfor %}
     </ul>
 

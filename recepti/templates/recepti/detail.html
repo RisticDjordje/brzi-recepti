@@ -1,7 +1,11 @@
 {% extends 'recepti/base.html' %}
 {% block title %}{{jelo.ime}}{% endblock %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'recepti/detail.css' %}" >
 
 {% block body %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'recepti/detail.css' %}" >
     <h1> {{jelo.ime}} </h1>
     <img src="{{jelo.slika.url}}">
     {% for kategorije in jelo.kategorija.all %}
