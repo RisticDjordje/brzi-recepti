@@ -4,8 +4,10 @@
 {% block body %}
     <h1> {{jelo.ime}} </h1>
     <img src="{{jelo.slika.url}}">
-    <h2> {{jelo.kategorija}}</h2>
+    {% for kategorije in jelo.kategorija.all %}
+      <li>{{kategorije}}</li>
+    {% endfor %}
     <h2> {{jelo.sastojci_opis|linebreaks}}</h2>
-    <h3> {{jelo.nacin_pripreme |linebreaks}}</h3>
+    <h3> {{jelo.nacin_pripreme|linebreaks}}</h3>
 {% endblock %}
 
