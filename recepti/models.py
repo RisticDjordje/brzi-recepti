@@ -24,9 +24,10 @@ class Kategorije(models.Model):                                               # 
 class Jela(models.Model):
     ime = models.CharField(max_length=100)
     slika = models.FileField()
-    sastojci = models.TextField()
-    nacin_pripreme = models.TextField()
     kategorija = models.ForeignKey(Kategorije, on_delete=models.CASCADE)
+    sastojci = models.ManyToManyField(Sastojci)
+    sastojci_opis = models.TextField(null=True)
+    nacin_pripreme = models.TextField()
     je_vegeterijansko = models.BooleanField(default=False)
 
     class Meta:
@@ -35,15 +36,3 @@ class Jela(models.Model):
     def __str__(self):
         return self.ime
 
-
-class SastojciUJelu(models.Model):
-    jelo = models.ForeignKey(Jela, on_delete=models.CASCADE)
-    sastojak = models.ForeignKey(Sastojci, on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name_plural = "Sastojci u jelu"
-
-
-class User(models.Model):
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=100)
