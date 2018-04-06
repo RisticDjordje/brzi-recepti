@@ -3,11 +3,11 @@
 
 {% block body %}
 
-    <h3> Recepti koje mozete napraviti sa sastojcima koje imate: </h3>
-    <ul>
+    <h3 align = 'center'> Recepti koje mozete napraviti sa sastojcima koje imate: </h3>
+    <ul align = 'center' class = 'list-unstyled'>
         {% for jelo in sva_jela %}
 
-            <li><img src="{{jelo.slika.url}}"><a href="{% url 'detalji' jelo.id %}"> {{ jelo.ime }} </a></li>
+            <a href = "{% url 'detalji' jelo.id %}"><img  align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/><a align = 'center' href="{% url 'detalji' jelo.id %}"> {{ jelo.ime }} </a></li>
         {% endfor %}
     </ul>
 
