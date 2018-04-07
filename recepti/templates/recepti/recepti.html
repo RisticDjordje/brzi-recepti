@@ -1,12 +1,16 @@
 {% extends 'recepti/base.html' %}
 {% block title %}Recepti{% endblock %}
+{% load staticfiles %}
 
 {% block body %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'recepti/recepti.css' %}" >
 
     <h3 align = 'center'> Recepti koje mozete napraviti sa sastojcima koje imate: </h3>
     <ul align = 'center' class = 'list-unstyled'>
         {% for jelo in sva_jela %}
-            <a href = "{% url 'detalji' jelo.id %}"><img  align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/><a align = 'center' href="{% url 'detalji' jelo.id %}"> {{ jelo.ime }} </a><br></li>
+            <a href = "{% url 'detalji' jelo.id %}"><img align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/>
+            <a href="{% url 'detalji' jelo.id %}" align = 'center'>  {{ jelo.ime }} </a><br>
         {% endfor %}
     </ul>
 

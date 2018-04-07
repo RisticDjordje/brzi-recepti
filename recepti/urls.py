@@ -11,7 +11,7 @@ urlpatterns = [
     # stranica recepta
     path('recepti/<int:pk>/', views.DetailView.as_view(), name='detalji'),
 
-    #register
+    # stranica za registraciju
     path('registracija/', views.UserFormView.as_view(), name='registracija'),
 
 ]
