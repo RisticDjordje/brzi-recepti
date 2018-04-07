@@ -1,0 +1,34 @@
+{% extends 'recepti/base.html' %}
+{% block title %}Prijavite se!{% endblock %}
+
+{% block body %}
+    <div id="content-container" class="container p-none">
+        <div class="lgn-container col-lg-8">
+            <form id="login-form" method="post" 
+                  action="{% url 'prijavljivanje' %}">
+                {% csrf_token %}
+                <table class="table">
+                    <tr>
+                        <td><label for="id_username">Korisničko ime</label></td>
+                        <td><input id="id_username" name="username" 
+                                   type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="id_password">Šifra</label></td>
+                        <td><input id="id_password" name="password" 
+                                   type="password" class="form-control"></td>
+                    </tr>
+                </table>
+                {% if form.errors %}
+                    <p class="badge badge-warning">
+                        Korisničko ime i šifra vam se ne poklapaju.
+                        Pokušajte ponovo.
+                    </p>
+                {% endif %}
+                <p align = 'center'>Nemate nalog? Napravite ga <a href = "{% url "registracija" %}">ovdje</a></p>
+                <input type="submit" value="Prijavite se" 
+                       class="btn btn-primary pull-center" />
+            </form>
+        </div>
+    </div>
+{% endblock body %}
