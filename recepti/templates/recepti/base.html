@@ -42,7 +42,11 @@
         <a class="nav-link" href="#">Kontakt</a>
       </li>
       <li class="nav-item">
-        <a href="{% url 'registracija' %}" class="btn btn-lg btn-success">Prijavi se</a>
+        {% if user.is_authenticated %}
+          <a href="{% url 'odjavljivanje' %}" class="btn btn-lg btn-success">Odjavi se</a>
+        {% else %}
+          <a href="{% url 'prijavljivanje' %}" class="btn btn-lg btn-success">Prijavi se</a>
+        {% endif %}
       </li>
     </ul>
   </div>
