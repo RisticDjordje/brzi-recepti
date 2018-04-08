@@ -9,9 +9,6 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h3>Registrujte se! </h3>
-                        {% if error_message %}
-                            <p><strong>{{ error_message }}</strong></p>
-                        {% endif %}
                         <form id="login-form" method="post" 
                         action="{% url 'registracija' %}">
                             {% csrf_token %}
@@ -33,6 +30,20 @@
 
                                 </tr>
                             </table>
+                            {% if form.errors %}
+                              {% for field in form %}
+                                 {% for error in field.errors %}
+                                     <div class="badge badge-warning">
+                                     <strong>{{ error|escape }}</strong>
+                                     </div><br/>
+                                 {% endfor %}
+                             {% endfor %}
+                              {% for error in form.non_field_errors %}
+                                 <div class="badge badge-warning">
+                                 <strong>{{ error|escape }}</strong>
+                                 </div><br/>
+                              {% endfor %}
+                            {% endif %}
                                     <button type="submit" class="btn btn-success">Registruj se</button>
                                 </div>
                             </div>
