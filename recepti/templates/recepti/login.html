@@ -2,6 +2,7 @@
 {% block title %}Prijavite se!{% endblock %}
 
 {% block body %}
+
     <div id="content-container" class="container p-none">
         <div class="lgn-container col-lg-8">
             <form id="login-form" method="post" 
@@ -25,10 +26,11 @@
                         Pokušajte ponovo.
                     </p>
                 {% endif %}
-                <p align = 'center'>Nemate nalog? Napravite ga <a href = "{% url "registracija" %}">ovdje</a></p>
+                <p align = 'center'>Nemate nalog? Napravite ga <a href = "{% url 'registracija' %}">ovdje</a></p>
                 <input type="submit" value="Prijavite se" 
                        class="btn btn-primary pull-center" />
             </form>
         </div>
     </div>
-{% endblock body %}
+
+{% endblock %}

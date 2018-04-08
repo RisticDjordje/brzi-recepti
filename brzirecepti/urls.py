@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    # /admin/ admin interfejs
+    # /admin/ - admin interfejs
     path('admin/', admin.site.urls),
 
     path('', include('recepti.urls')),
