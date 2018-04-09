@@ -13,36 +13,30 @@
 
 
 
-        <script type="text/javascript">
-            $(document).ready(function() {
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#myTags").tagit();
+            $("#search-form").submit(function(e) {
 
+                var all = $(".tagit-label").map(function() {
+                    return this.innerHTML;
+                }).get();
 
-                $("#myTags").tagit();
-                   $("#search-form").submit(function(e) {
+                var tags = all.join();
+                $("#q").val(tags);
 
-
-var all = $(".tagit-label").map(function() {
-    return this.innerHTML;
-}).get();
-
-var tags = all.join();
-$("#q").val(tags);
-
-                       // alert(tags);
-
-                    });
-
+                 // alert(tags);
             });
+        });
+    </script>
 
-        </script>
-
-    <form id="search-form">
-        <ul id="myTags">
-            <!-- Existing list items will be pre-added to the tags -->
-        </ul>
-        <input type="hidden" name="q" id="q" />
-        <button type="submit" class="btn-success">button</button>
-    </form>
+        <form id="search-form">
+            <ul id="myTags">
+                <!-- Existing list items will be pre-added to the tags -->
+            </ul>
+            <input type="hidden" name="q" id="q" />
+            <button type="submit" class="btn-success">button</button>
+        </form>
 
     <h1>{{ message }}</h1>
 
