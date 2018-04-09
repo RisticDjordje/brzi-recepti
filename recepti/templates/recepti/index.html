@@ -3,10 +3,48 @@
 {% load staticfiles %}
 
 {% block body %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'recepti/js/tag-it.js' %}" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+    <link href="{% static 'recepti/jquery.tagit.css' %}" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/index.css' %}" >
 
-    <img src="{% static '/recepti/images/1.jpg' %}">
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+                $("#myTags").tagit();
+                   $("#search-form").submit(function(e) {
+
+
+var all = $(".tagit-label").map(function() {
+    return this.innerHTML;
+}).get();
+
+var tags = all.join();
+$("#q").val(tags);
+
+                       // alert(tags);
+
+                    });
+
+            });
+
+        </script>
+
+    <form id="search-form">
+        <ul id="myTags">
+            <!-- Existing list items will be pre-added to the tags -->
+        </ul>
+        <input type="hidden" name="q" id="q" />
+        <button type="submit" class="btn-success">button</button>
+    </form>
+
+    <h1>{{ message }}</h1>
 
 {% endblock %}
 

@@ -1,6 +1,4 @@
 from django.views import generic
-
-from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views.generic import View
@@ -13,6 +11,10 @@ class IndexView(generic.ListView):  # pocetna
 
     def get_queryset(self):
         return Jela.objects.all()
+
+    def param(self, request):
+        message = request.GET.get('tags', '')
+        return message
 
 
 class ReceptiView(generic.ListView):  # recepti koje mozete napraviti sa vasim sastojcima
