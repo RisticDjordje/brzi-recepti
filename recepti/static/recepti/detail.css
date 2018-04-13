@@ -1,3 +1,25 @@
-h1 {
-    color: red;
+h2{
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+    margin-left: 200px;
+    margin-right: 200px;
+    position: centre;
+}
+
+h3{
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+    margin-left: 200px;
+    margin-right: 200px;
+    position: centre;
+}
+
+h1{
+    margin-left: 400px;
 }

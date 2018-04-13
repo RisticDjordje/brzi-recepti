@@ -10,7 +10,7 @@
     <img src="{{jelo.slika.url}}">
 
     {% for kategorije in jelo.kategorija.all %}
-      <li>{{kategorije}}</li>
+        <h2>{{kategorije}}</h2>
     {% endfor %}
 
     <h2> {{jelo.sastojci_opis|linebreaks}}</h2>

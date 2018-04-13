@@ -1,8 +1,12 @@
-body{
-    background: url("images/background.png");
-    background-color: #85f5a3;
+.navbar{
+    background: #ffffff;
+    border-bottom:  3px solid #000000;
+}
+.navbar-nav li a {
+    color: 	#000000;
 }
 
-nav{
-    font-family: Indie Flower;
-}
+
+
+
+

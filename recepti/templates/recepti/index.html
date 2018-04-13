@@ -8,7 +8,6 @@
     <script src="{% static 'recepti/js/tag-it.js' %}" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
     <link href="{% static 'recepti/jquery.tagit.css' %}" rel="stylesheet" type="text/css">
-
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/index.css' %}" >
 
 
@@ -30,15 +29,15 @@
         });
     </script>
 
-        <form id="search-form">
-            <ul id="myTags">
-                <!-- Existing list items will be pre-added to the tags -->
-            </ul>
-            <input type="hidden" name="q" id="q" />
-            <button type="submit" class="btn-success">button</button>
-        </form>
+    <form id="search-form">
+        <ul id="myTags">
+            <!-- Existing list items will be pre-added to the tags -->
+        </ul>
+        <input type="hidden" name="q" id="q" />
+        <button type="submit" class="btn-success">PRETRAŽI</button>
 
-    <h1>{{ message }}</h1>
+    </form>
+
 
 {% endblock %}
 

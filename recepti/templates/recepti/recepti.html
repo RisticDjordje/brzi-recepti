@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/recepti.css' %}" >
 
     <h3 align = 'center'> Recepti koje mozete napraviti sa sastojcima koje imate: </h3>
+
     <ul align = 'center' class = 'list-unstyled'>
         {% for jelo in sva_jela %}
             <a href = "{% url 'detalji' jelo.id %}"><img align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/>

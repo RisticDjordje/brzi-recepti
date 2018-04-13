@@ -12,9 +12,9 @@ class IndexView(generic.ListView):  # pocetna
     def get_queryset(self):
         return Jela.objects.all()
 
-    def param(self, request):
-        message = request.GET.get('tags', '')
-        return message
+    def param(self):
+        tags = self.request.GET.get('tags')
+        return tags
 
 
 class ReceptiView(generic.ListView):  # recepti koje mozete napraviti sa vasim sastojcima
