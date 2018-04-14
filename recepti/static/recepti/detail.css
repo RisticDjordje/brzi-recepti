@@ -1,25 +1,19 @@
-h2{
-    margin-bottom: .5rem;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.2;
-    color: inherit;
-    margin-left: 200px;
-    margin-right: 200px;
-    position: centre;
+.container{
+    width: 100%;
+    border: 1px solid gray;
+    background-color: #81FF33;
+}
+.container .ime{
+    width: 384px;
+    height: 240px;
+    margin-left:363px;
+    font-size: 4em;
+    padding: 1em;
+    color: black;
+    clear: left;
+    text-align: center;
 }
 
-h3{
-    margin-bottom: .5rem;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.2;
-    color: inherit;
-    margin-left: 200px;
-    margin-right: 200px;
-    position: centre;
-}
-
-h1{
-    margin-left: 400px;
+.container .slika {
+    margin-left: 425px;
 }

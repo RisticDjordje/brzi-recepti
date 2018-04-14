@@ -4,17 +4,22 @@
 
 {% block body %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'recepti/detail.css' %}" >
+  <link rel="stylesheet" type="text/css" href="{% static 'recepti/detail.css' %}" >
 
-    <h1> {{jelo.ime}} </h1>
-    <img src="{{jelo.slika.url}}">
-
-    {% for kategorije in jelo.kategorija.all %}
-        <h2>{{kategorije}}</h2>
-    {% endfor %}
-
-    <h2> {{jelo.sastojci_opis|linebreaks}}</h2>
-    <h3> {{jelo.nacin_pripreme|linebreaks}}</h3>
+     <div class="container">
+        <div class="ime">
+         <h> {{jelo.ime}} </h>
+        </div>
+         <div class="slika">
+             <img src="{{jelo.slika.url}}" class="slikajela">
+        </div>
+        <div class="sastojci">
+            <p> {{jelo.sastojci_opis|linebreaks}}</p>
+        </div>
+        <div class="priprema">
+            <p> {{jelo.nacin_pripreme|linebreaks}}</p>
+        </div>
+    </div>
 
 {% endblock %}
 
