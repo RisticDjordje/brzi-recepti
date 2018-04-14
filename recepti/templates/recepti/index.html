@@ -16,7 +16,6 @@
         $(document).ready(function() {
             $("#myTags").tagit();
             $("#search-form").submit(function(e) {
-
                 var all = $(".tagit-label").map(function() {
                     return this.innerHTML;
                 }).get();
@@ -34,9 +33,10 @@
             <!-- Existing list items will be pre-added to the tags -->
         </ul>
         <input type="hidden" name="q" id="q" />
-        <button type="submit" class="btn-success">PRETRAŽI</button>
-
     </form>
+    <a href="{% url 'recepti' %}">
+            <button type="submit" class="btn-success" style="margin-left: 720px">PRETRAŽI</button>
+    </a>
 
 
 {% endblock %}

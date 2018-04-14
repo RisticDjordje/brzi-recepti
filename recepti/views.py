@@ -63,3 +63,12 @@ class UserFormView(View):
                     return redirect('index')
 
         return render(request, self.template_name, {'form': form})
+
+
+# def pdf_generation(request):  nesto za pdf
+#     html_template = get_template('recepti/<int:pk>/')
+#     pdf_file = HTML(string=html_template).write_pdf()
+#     response = HttpResponse(pdf_file, content_type='application/pdf')
+#     response['Content-Disposition'] = 'filename="{{Jela.ime}}"'
+#     return response
+
