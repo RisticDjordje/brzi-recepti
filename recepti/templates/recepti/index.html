@@ -3,13 +3,13 @@
 {% load staticfiles %}
 
 {% block body %}
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'recepti/js/tag-it.js' %}" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
     <link href="{% static 'recepti/jquery.tagit.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/index.css' %}" >
-
 
 
     <script type="text/javascript">
@@ -33,11 +33,8 @@
             <!-- Existing list items will be pre-added to the tags -->
         </ul>
         <input type="hidden" name="q" id="q" />
+        <button type="submit" class="btn-success">PRETRAŽI</button>
     </form>
-    <a href="{% url 'recepti' %}">
-            <button type="submit" class="btn-success" style="margin-left: 720px">PRETRAŽI</button>
-    </a>
-
 
 {% endblock %}
 
