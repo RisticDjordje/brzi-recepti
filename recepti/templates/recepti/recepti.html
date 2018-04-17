@@ -6,35 +6,43 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/recepti.css' %}" >
 
-    <h3 align = 'center'> Za dorucak mozete napraviti: </h3>
     {% if random_dorucak %}
-        <img align = 'center' src="{{random_dorucak.slika.url}}" width="600" height="400"><br>
-        {{ random_dorucak.ime }}
+    <h3 align = 'center' class="dorucak"> Za doručak mozete napraviti: </h3>
+    <ul align = 'center' class = 'list-unstyled'>
+        <a href = "{% url 'detalji' random_dorucak.id %}"><img src="{{random_dorucak.slika.url}}" width="600" height="400"></a><br/>
+        <a href="{% url 'detalji' random_dorucak.id  %}">{{ random_dorucak.ime }}</a><br>
+    </ul>
     {% endif %}
 
-    <h3 align = 'center'> Za rucak mozete napraviti: </h3>
     {% if random_rucak %}
-        <img align = 'center' src="{{random_rucak.slika.url}}" width="600" height="400"><br>
-        {{ random_rucak.ime }}
+    <h3 align = 'center'> Za ručak mozete napraviti: </h3>
+    <ul align = 'center' class = 'list-unstyled'>
+        <a href = "{% url 'detalji' random_rucak.id %}"><img src="{{random_rucak.slika.url}}" width="600" height="400"></a><br/>
+        <a href="{% url 'detalji' random_rucak.id  %}">{{ random_rucak.ime }}</a><br>
+    </ul>
     {% endif %}
 
-    <h3 align = 'center'> Za veceru mozete napraviti: </h3>
     {% if random_vecera %}
-        <img align = 'center' src="{{random_vecera.slika.url}}" width="600" height="400"><br>
-        {{ random_vecera.ime }}
+    <h3 align = 'center'> Za večeru mozete napraviti: </h3>
+    <ul align = 'center' class = 'list-unstyled'>
+        <a href = "{% url 'detalji' random_vecera.id %}"><img src="{{random_vecera.slika.url}}" width="600" height="400"></a><br/>
+        <a href="{% url 'detalji' random_vecera.id  %}">{{ random_vecera.ime }}</a><br>
+    </ul>
     {% endif %}
 
-    <h3 align = 'center'> Za uzinu mozete napraviti: </h3>
     {% if random_uzina %}
-        <img align = 'center' src="{{random_uzina.slika.url}}" width="600" height="400"><br>
-        {{ random_uzina.ime }}
+    <h3 align = 'center'> Za užinu mozete napraviti: </h3>
+    <ul align = 'center' class = 'list-unstyled'>
+        <a href = "{% url 'detalji' random_uzina.id %}"><img src="{{random_uzina.slika.url}}" width="600" height="400"></a><br/>
+        <a href="{% url 'detalji' random_uzina.id  %}">{{ random_uzina.ime }}</a><br>
+    </ul>
     {% endif %}
 
     <h3 align = 'center'> Svi recepti koje mozete napraviti sa sastojcima koje imate: </h3>
     <ul align = 'center' class = 'list-unstyled'>
         {% for jelo in recepti %}
-            <a href = "{% url 'detalji' jelo.id %}"><img align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/>
-            <a href="{% url 'detalji' jelo.id %}" align = 'center'>  {{ jelo.ime }} </a><br>
+            <a href = "{% url 'detalji' jelo.id %}"><img src="{{jelo.slika.url}}" width="600" height="400"></a><br/>
+            <a href="{% url 'detalji' jelo.id %}"> {{ jelo.ime }} </a><br>
         {% endfor %}
     </ul>
 

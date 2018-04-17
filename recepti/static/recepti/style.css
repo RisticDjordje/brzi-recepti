@@ -1,9 +1,18 @@
 .navbar{
     background: #ffffff;
     border-bottom:  3px solid #FA1423;
+    font-size: 16px;
 }
+
 .navbar-nav li a {
     color: 	#FA1423;
+}
+
+.region-navbar-3{
+        margin-left: 573px;
+}
+.slika {
+        margin-left: 487px;
 }
 
 
