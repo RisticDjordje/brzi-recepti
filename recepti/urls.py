@@ -18,4 +18,7 @@ urlpatterns = [
     # prijavljivanje i odjavljivanje
     path('login/', auth_views.login, {'template_name': 'recepti/login.html'}, name='prijavljivanje'),
     path('logout/', auth_views.logout, {'next_page': '/'}, name='odjavljivanje'),
+
+    #dodaj
+    path('dodajrecept/', views.DodajView.as_view(), name = 'dodajrecept'),
 ]

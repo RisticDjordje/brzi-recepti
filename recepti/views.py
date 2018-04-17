@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views.generic import View
 from .models import Jela
-from .forms import UserForm
-
+from .forms import UserForm, DodajRecept
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 class IndexView(generic.ListView):  # pocetna
     template_name = 'recepti/index.html'
@@ -29,6 +30,22 @@ class DetailView(generic.DetailView):  # detalji recepta
     context_object_name = 'jelo'
     model = Jela
     template_name = 'recepti/detail.html'
+
+
+class DodajView(View):
+    template_name = 'recepti/dodajrecept.html'
+    def get(self, request):
+        return render(request, self.template_name, {'form': DodajRecept()})
+
+    def post(self, request):
+        if request.method == 'POST':
+            form = DodajRecept(request.POST, request.FILES)
+            if form.is_valid():
+                    form.save(commit=True)
+                    return redirect('recepti')
+            else:
+                messages.error(request, form)
+        return render(request, self.template_name, {'form': DodajRecept()})
 
 
 class UserFormView(View):
