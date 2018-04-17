@@ -6,10 +6,33 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/recepti.css' %}" >
 
-    <h3 align = 'center'> Recepti koje mozete napraviti sa sastojcima koje imate: </h3>
+    <h3 align = 'center'> Za dorucak mozete napraviti: </h3>
+    {% if random_dorucak %}
+        <img align = 'center' src="{{random_dorucak.slika.url}}" width="600" height="400"><br>
+        {{ random_dorucak.ime }}
+    {% endif %}
 
+    <h3 align = 'center'> Za rucak mozete napraviti: </h3>
+    {% if random_rucak %}
+        <img align = 'center' src="{{random_rucak.slika.url}}" width="600" height="400"><br>
+        {{ random_rucak.ime }}
+    {% endif %}
+
+    <h3 align = 'center'> Za veceru mozete napraviti: </h3>
+    {% if random_vecera %}
+        <img align = 'center' src="{{random_vecera.slika.url}}" width="600" height="400"><br>
+        {{ random_vecera.ime }}
+    {% endif %}
+
+    <h3 align = 'center'> Za uzinu mozete napraviti: </h3>
+    {% if random_uzina %}
+        <img align = 'center' src="{{random_uzina.slika.url}}" width="600" height="400"><br>
+        {{ random_uzina.ime }}
+    {% endif %}
+
+    <h3 align = 'center'> Svi recepti koje mozete napraviti sa sastojcima koje imate: </h3>
     <ul align = 'center' class = 'list-unstyled'>
-        {% for jelo in sva_jela %}
+        {% for jelo in recepti %}
             <a href = "{% url 'detalji' jelo.id %}"><img align = 'center' src="{{jelo.slika.url}}" width="600" height="400"></a><br/>
             <a href="{% url 'detalji' jelo.id %}" align = 'center'>  {{ jelo.ime }} </a><br>
         {% endfor %}

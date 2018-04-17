@@ -18,4 +18,10 @@ urlpatterns = [
     # prijavljivanje i odjavljivanje
     path('login/', auth_views.login, {'template_name': 'recepti/login.html'}, name='prijavljivanje'),
     path('logout/', auth_views.logout, {'next_page': '/'}, name='odjavljivanje'),
+
+    # dodaj recept
+    path('dodajrecept/', views.DodajView.as_view(), name='dodajrecept'),
+
+    # pdf
+    # path('pdf/', views.GeneratePdf.as_view()),
 ]

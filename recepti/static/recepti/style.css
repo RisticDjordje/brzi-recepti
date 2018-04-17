@@ -1,9 +1,9 @@
 .navbar{
-    background: green;
-    border-bottom:  3px solid #000000;
+    background: #ffffff;
+    border-bottom:  3px solid #FA1423;
 }
 .navbar-nav li a {
-    color: 	#000000;
+    color: 	#FA1423;
 }
 
 

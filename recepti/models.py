@@ -24,7 +24,7 @@ class Sastojci(models.Model):                                                 # 
 class Jela(models.Model):
     ime = models.CharField(max_length=100)
     slika = models.FileField()
-    kategorija = models.ManyToManyField(Kategorije)
+    kategorija = models.ForeignKey(Kategorije, on_delete=models.CASCADE, null=True)  # Doručak, Ručak, Večera, Užina
     sastojci = models.ManyToManyField(Sastojci)
     sastojci_opis = models.TextField(null=True)
     nacin_pripreme = models.TextField()
