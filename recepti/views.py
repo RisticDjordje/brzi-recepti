@@ -24,7 +24,7 @@ class ReceptiView(generic.ListView):
     context_object_name = 'recepti'
 
     # because of context_object_name above and how generic.ListView works,
-    #  the result of this is available in your template as {{ recepti }}
+    # the result of this is available in your template as {{ recepti }}
     def get_queryset(self):
         return Jela.objects.filter(sastojci__ime__icontains='Jaja')
 

@@ -1,7 +1,9 @@
 {% extends 'recepti/base.html' %}
 {% block title %}Dodaj recept!{% endblock %}
+{% load staticfiles %}
 
 {% block body %}
+    <link rel="stylesheet" type="text/css" href="{% static 'recepti/dodajrecept.css' %}" >
 
     {% if user.is_authenticated %}
         {% if form.errors %}
