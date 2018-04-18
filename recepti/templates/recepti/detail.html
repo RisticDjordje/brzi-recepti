@@ -6,19 +6,23 @@
 
   <link rel="stylesheet" type="text/css" href="{% static 'recepti/detail.css' %}" >
 
-     <div class="container">
+    <div class="container">
         <div class="ime">
          <h> {{jelo.ime}} </h>
         </div>
          <div class="slika">
              <img src="{{jelo.slika.url}}" class="slikajela" width="600" height="400">
         </div>
-        <div class="sastojci">
-            <p> {{jelo.sastojci_opis|linebreaks}}</p>
-        </div>
-        <div class="priprema">
-            <p> {{jelo.nacin_pripreme|linebreaks}}</p>
-        </div>
+         <div class="recept">
+            <div class="sastojci">
+                <P class="prvi" style="font-weight: bold;">SASTOJCI</P>
+                <p> {{jelo.sastojci_opis|linebreaks}}</p>
+            </div>
+            <div class="priprema">
+                <P class="drugi" style="font-weight: bold;">PRIPREMA</P>
+                <p> {{jelo.nacin_pripreme|linebreaks}}</p>
+            </div>
+         </div>
     </div>
 
 {% endblock %}

@@ -1,12 +1,22 @@
 h3 {
-    color: #FA1423;
+    color: #6c132b;
 }
 
 .dorucak {
-    color: #FA1423;
+    color: #6c132b;
+    margin-top: 30px;
+}
+.svirecepti {
+    color: #6c132b;
     margin-top: 30px;
 }
 
 a {
     color: #FA1423;
+}
+
+.kontejner {
+    width: 100%;
+    border: 1px solid gray;
+    background-color: #81FF33;
 }

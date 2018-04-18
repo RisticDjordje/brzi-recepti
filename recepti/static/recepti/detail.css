@@ -3,6 +3,7 @@
     border: 1px solid gray;
     background-color: #81FF33;
 }
+
 .container .ime{
     width: 384px;
     height: 240px;
@@ -16,4 +17,22 @@
 
 .container .slika {
     margin-left: 254px;
-   }
+}
+
+.container .recept {
+    display: inline-block;
+    width: 100%
+    }
+
+.container .recept .sastojci{
+    width: 30%;
+    height: 400px;
+    margin-top: 86px;
+    margin-left: 185px;
+    margin-bottom: -203px;}
+
+.container .recept .priprema{
+    width: 70%;
+    height: 400px;
+    margin-left: 185px;
+}

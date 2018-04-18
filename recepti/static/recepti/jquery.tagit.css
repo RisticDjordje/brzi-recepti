@@ -7,9 +7,9 @@
 ul.tagit {
     padding: 1px 5px;
     overflow: auto;
-    margin-left: 350px;
-    margin-right: 350px;
     margin-top: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 ul.tagit li {
     display: block;

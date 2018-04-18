@@ -11,30 +11,35 @@
     <link href="{% static 'recepti/jquery.tagit.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/index.css' %}" >
 
+    <div class="div">
+        <div class="blur">
+            <h1 align="center" style="color:white; font-weight: 1000;">PRONAĐITE RECEPTE</h1>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#myTags").tagit();
-            $("#search-form").submit(function(e) {
-                var all = $(".tagit-label").map(function() {
-                    return this.innerHTML;
-                }).get();
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#myTags").tagit();
+                    $("#search-form").submit(function(e) {
+                        var all = $(".tagit-label").map(function() {
+                            return this.innerHTML;
+                        }).get();
 
-                var tags = all.join();
-                $("#q").val(tags);
+                        var tags = all.join();
+                        $("#q").val(tags);
 
-                 // alert(tags);
-            });
-        });
-    </script>
+                         // alert(tags);
+                    });
+                });
+            </script>
 
-    <form id="search-form">
-        <ul id="myTags">
-            <!-- Existing list items will be pre-added to the tags -->
-        </ul>
-        <input type="hidden" name="q" id="q" />
-        <button type="submit" class="btn-success">PRETRAŽI</button>
-    </form>
+            <form id="search-form">
+                <ul id="myTags">
+                    <!-- Existing list items will be pre-added to the tags -->
+                </ul>
+                <input type="hidden" name="q" id="q" />
+                <button type="submit" class="btn-success">PRETRAŽI</button>
+            </form>
+        </div>
+    </div>
 
 {% endblock %}
 
