@@ -18,5 +18,8 @@ a {
 .kontejner {
     width: 100%;
     border: 1px solid gray;
-    background-color: #81FF33;
+    background-color: #ffeecc;
+    max-width: 1140px;
+    margin-left:180px;
+    min-width:1200px;
 }

@@ -1,7 +1,7 @@
 .container{
     width: 100%;
     border: 1px solid gray;
-    background-color: #81FF33;
+    background-color: #ffeecc;
 }
 
 .container .ime{
@@ -25,14 +25,16 @@
     }
 
 .container .recept .sastojci{
-    width: 30%;
-    height: 400px;
+    width: 100%;
     margin-top: 86px;
     margin-left: 185px;
-    margin-bottom: -203px;}
+    display: inline-block;
+    vertical-align: top;
+    }
 
 .container .recept .priprema{
     width: 70%;
-    height: 400px;
     margin-left: 185px;
+    display: inline-block;
+    vertical-align: top;
 }
