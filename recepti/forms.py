@@ -15,3 +15,6 @@ class DodajRecept(forms.ModelForm):
     class Meta:
         model = Jela
         fields = ['ime', 'slika', 'kategorija', 'sastojci', 'sastojci_opis', 'nacin_pripreme', 'je_vegeterijansko']
+
+class SastojciL(forms.Form):
+    q = forms.CharField()

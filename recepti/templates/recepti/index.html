@@ -13,7 +13,7 @@
 
     <div class="div">
         <div class="blur">
-            <h1 align="center" style="color:white; font-weight: 1000;" class="text">PRONAĐITE RECEPTE</h1>
+            <h1 align="center" style="color:white; font-weight: 1000;">PRONAĐITE RECEPTE</h1>
 
             <script type="text/javascript">
                 $(document).ready(function() {
@@ -24,22 +24,22 @@
                         }).get();
 
                         var tags = all.join();
-                        $("#q").val(tags);
+                        $("#id_q").val(tags);
 
                          // alert(tags);
                     });
                 });
             </script>
-
-            <form id="search-form">
+            {{tagovi}}
+            <form id="search-form" method = "POST" action="{% url 'index' %}">
+                    {% csrf_token %}
                 <ul id="myTags">
                     <!-- Existing list items will be pre-added to the tags -->
                 </ul>
-                <input type="hidden" name="q" id="q" />
+                <input type="hidden" name="q" id="id_q" />
                 <button type="submit" class="btn-success">PRETRAŽI</button>
             </form>
         </div>
     </div>
 
 {% endblock %}
-

@@ -2,9 +2,13 @@ from django.views import generic
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views.generic import View
-from .models import Jela
-from .forms import UserForm, DodajRecept
 from django.contrib import messages
+from .models import Jela, Sastojci
+from .forms import UserForm, DodajRecept, SastojciL
+from django.http import HttpResponse
+
+from django.db.models import OuterRef
+
 
 # from django.http import HttpResponse
 # from .utils import render_to_pdf
@@ -14,9 +18,18 @@ class IndexView(generic.ListView):  # pocetna
     template_name = 'recepti/index.html'
     model = Jela
 
-    def param(self):
-        tags = self.request.GET.get('tags')
-        return tags
+    def get(self, request):
+        return render(request, self.template_name, {'form': SastojciL()})
+
+    def post(self, request):
+        if request.method == 'POST':
+            form = SastojciL(request.POST)
+            if form.is_valid():
+                tagovi = form.cleaned_data['q']
+                return HttpResponse(tagovi)
+            else:
+                print(form,'adasf')
+            return render(request, self.template_name, {'form': SastojciL()})
 
 
 class ReceptiView(generic.ListView):
@@ -25,8 +38,21 @@ class ReceptiView(generic.ListView):
 
     # because of context_object_name above and how generic.ListView works,
     # the result of this is available in your template as {{ recepti }}
+
     def get_queryset(self):
         return Jela.objects.filter(sastojci__ime__icontains='Jaja')
+
+    # def get_queryset(self):
+    #     query = Jela.objects \
+    #                 .annotate(
+    #                     contains_other=Exclude(
+    #                         Sastojci.objects.filter(Jaja=Outerref('pk')).exclude(
+    #                             Ime__in=('Jaja',)
+    #                         )
+    #                     )
+    #                  ) \
+    #                .filter(contains__other=False)
+    #     return query
 
     # the : str and -> Jela are type hints, they show what kind of data type the input/output have
     def get_random(self, category: str) -> Jela:

@@ -4,30 +4,30 @@
 
 {% block body %}
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/dodajrecept.css' %}" >
-
-    {% if user.is_authenticated %}
-        {% if form.errors %}
-             {% for field in form %}
-                {% for error in field.errors %}
-                     <div class="badge badge-warning">
-                     <strong>{{ error|escape }}</strong>
-                     </div><br/>
+    <div class="divcina">
+        {% if user.is_authenticated %}
+            {% if form.errors %}
+                 {% for field in form %}
+                    {% for error in field.errors %}
+                         <div class="badge badge-warning">
+                         <strong>{{ error|escape }}</strong>
+                         </div><br/>
+                    {% endfor %}
+                 {% endfor %}
+                 {% for error in form.non_field_errors %}
+                        <div class="badge badge-warning">
+                        <strong>{{ error|escape }}</strong>
+                         </div><br/>
                 {% endfor %}
-             {% endfor %}
-             {% for error in form.non_field_errors %}
-                    <div class="badge badge-warning">
-                    <strong>{{ error|escape }}</strong>
-                     </div><br/>
-            {% endfor %}
+            {% endif %}
+            <form action="{% url 'dodajrecept' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token  %}
+                       {{form.as_p}}
+                <input type="submit" value="Dodaj!"
+                       class="btn-primary" />
+            </form>
+        {% else %}
+            <h1 style = 'color: red'>Nemate pristup ovoj stranici!</h1>
         {% endif %}
-        <form action="{% url 'dodajrecept' %}" method="post" enctype="multipart/form-data">
-            {% csrf_token  %}
-                   {{form.as_p}}
-            <input type="submit" value="Dodaj!"
-                   class="btn btn-primary pull-center" />
-        </form>
-    {% else %}
-        <h1 style = 'color: red'>Nemate pristup ovoj stranici!</h1>
-    {% endif %}
-
+    </div>
 {% endblock %}
