@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+    border: 1px solid gray;
+    background-color: #ffeecc;
+    max-width: 1140px;
+    margin-left:180px;
+    min-width:1200px;
+}
+.container .ime{
+    width: 384px;
+    height: 240px;
+    margin-left:363px;
+    font-size: 4em;
+    padding: 1em;
+    color: black;
+    clear: left;
+    text-align: center;
+}
+
+.container .slika {
+    margin-left: 254px;
+}
+
+.container .recept {
+    display: inline-block;
+    width: 100%
+    }
+
+.container .recept .sastojci{
+    width: 100%;
+    margin-top: 86px;
+    margin-left: 185px;
+    display: inline-block;
+    vertical-align: top;
+    }
+
+.container .recept .priprema{
+    width: 70%;
+    margin-left: 185px;
+    display: inline-block;
+    vertical-align: top;
+}

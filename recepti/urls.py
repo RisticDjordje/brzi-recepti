@@ -16,12 +16,14 @@ urlpatterns = [
     path('registracija/', views.UserFormView.as_view(), name='registracija'),
 
     # prijavljivanje i odjavljivanje
-    path('login/', auth_views.login, {'template_name': 'recepti/login.html'}, name='prijavljivanje'),
-    path('logout/', auth_views.logout, {'next_page': '/'}, name='odjavljivanje'),
+    path('login/', auth_views.LoginView.as_view, {'template_name': 'recepti/login.html'}, name='prijavljivanje'),
+    path('logout/', auth_views.LogoutView.as_view, {'next_page': '/'}, name='odjavljivanje'),
 
     # dodaj recept
     path('dodajrecept/', views.DodajView.as_view(), name='dodajrecept'),
 
+    # zdrava ishrana
+    path('zdravaishrana/', views.ZdravaIshranaView.as_view(), name='zdravaishrana'),
     # pdf
     # path('pdf/', views.GeneratePdf.as_view()),
 ]

@@ -27,7 +27,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse .col-xs-6 .col-sm-4" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse .col-xs-6 .col-sm-3" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'index' %}">POČETNA <span class="sr-only">(current)</span></a>
@@ -35,11 +35,14 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'dodajrecept' %}">DODAJ RECEPT</a>
           </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'zdravaishrana' %}">ZDRAVA ISHRANA</a>
+          </li>
         </ul>
       </div>
 
-      <div class="slika .col-xs-6 .col-sm-4">
-          <img class="mx-auto img-fluid" src="{% static 'recepti/images/logo.png' %}">
+    <div class="slika .col-xs-6 .col-sm-3" style="margin-left: 354px;">
+          <img class="mx-auto img-fluid" src="/static/recepti/images/logo.png">
       </div>
 
       <div class="region-navbar-3 .col-xs-6 .col-sm-4">

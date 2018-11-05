@@ -26,9 +26,9 @@ class IndexView(generic.ListView):  # pocetna
             form = SastojciL(request.POST)
             if form.is_valid():
                 tagovi = form.cleaned_data['q']
-                return HttpResponse(tagovi)
+                return redirect('recepti')
             else:
-                print(form,'adasf')
+                pass
             return render(request, self.template_name, {'form': SastojciL()})
 
 
@@ -40,14 +40,14 @@ class ReceptiView(generic.ListView):
     # the result of this is available in your template as {{ recepti }}
 
     def get_queryset(self):
-        return Jela.objects.filter(sastojci__ime__icontains='Jaja')
+        return Jela.objects.filter(sastojci__ime__icontains="Jaja")
 
     # def get_queryset(self):
     #     query = Jela.objects \
     #                 .annotate(
-    #                     contains_other=Exclude(
-    #                         Sastojci.objects.filter(Jaja=Outerref('pk')).exclude(
-    #                             Ime__in=('Jaja',)
+    #                     contains_other=OuterRef(
+    #                         Sastojci.objects.filter(jela=OuterRef('pk')).exclude(
+    #                             ime__in=('Jaja', 'Krompir')
     #                         )
     #                     )
     #                  ) \
@@ -78,6 +78,12 @@ class DetailView(generic.DetailView):  # detalji recepta
     context_object_name = 'jelo'
     model = Jela
     template_name = 'recepti/detail.html'
+
+
+class ZdravaIshranaView(generic.ListView):  # zdrava ishrana
+    context_object_name = 'zdravaishrana'
+    model = Jela
+    template_name = 'recepti/zdravaishrana.html'
 
 
 class UserFormView(View):

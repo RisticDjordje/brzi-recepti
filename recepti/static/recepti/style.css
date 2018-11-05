@@ -9,11 +9,6 @@ a.nav-link:hover {
     color: #6c132b;
 }
 
-li.nav-item.active a.nav-link {
-    text-decoration: underline solid #6c132b;
-    color: #6c132b
-}
-
 .navbar-nav li a {
     color: 	#FA1423;
 }

@@ -28,12 +28,12 @@
 
                          // alert(tags);
                     });
+                    $("#myTags").tagit({ availableTags: ["Ulje","Mliječna čokolada","Slatka pavlaka","Griz","Puter","Čokolada za kuhanje","Kakao","Šećer","Suncokretovo ulje","Kore za pitu","Pavlaka","Sir","Limun","Maslinovo ulje","Krastavac","Mrkva","Rotkvica","Dajkon","Keleraba","Lovor","Biber","Peršun","Celer","Crveni luk","Paškanat","Šargarepa","Ćureći vrat","So","Mlijeko","Krompir","Jaja"]});
                 });
             </script>
-            {{tagovi}}
-            <form id="search-form" method = "POST" action="{% url 'index' %}">
+            <form id="search-form" method = "GET" class="test" action="{% url 'recepti' %}">
                     {% csrf_token %}
-                <ul id="myTags">
+                <ul id="myTags" style="height:258px;">
                     <!-- Existing list items will be pre-added to the tags -->
                 </ul>
                 <input type="hidden" name="q" id="id_q" />

@@ -5,7 +5,7 @@
 {% block body %}
     <link rel="stylesheet" type="text/css" href="{% static 'recepti/dodajrecept.css' %}" >
     <div class="divcina">
-        {% if user.is_authenticated %}
+
             {% if form.errors %}
                  {% for field in form %}
                     {% for error in field.errors %}
@@ -26,8 +26,5 @@
                 <input type="submit" value="Dodaj!"
                        class="btn-primary" />
             </form>
-        {% else %}
-            <h1 style = 'color: red'>Nemate pristup ovoj stranici!</h1>
-        {% endif %}
     </div>
 {% endblock %}
